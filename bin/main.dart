@@ -5,11 +5,11 @@ List addSortedList(List<int> l1, List<int> l2) {
   int p1 = 0;
   int p2 = 0;
   while (p1 < l1.length || p2 < l2.length) {
-    if (p1 == l1.length - 1) {
+    if (p1 > l1.length - 1) {
       output.addAll(l2.sublist(p2));
       break;
     }
-    if (p2 == l2.length - 1) {
+    if (p2 > l2.length - 1) {
       output.addAll(l1.sublist(p1));
       break;
     }
@@ -18,6 +18,7 @@ List addSortedList(List<int> l1, List<int> l2) {
       p1++;
     } else if (l1[p1] == l2[p2]) {
       output.add(l1[p1]);
+      output.add(l2[p2]);
       p1++;
       p2++;
     } else {
